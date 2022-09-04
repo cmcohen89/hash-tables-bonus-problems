@@ -26,14 +26,14 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
 
     describe('newAlphabet()', () => {
         it('should return a boolean indicating if the string is in "alphabetical" order of the given alphbet', () => {
-            const str1 = 'dino', str2 = 'leetcode', str3 = 'leetcod', str4 = 'limo', str5 = 'abcd';
+            const str1 = 'dino', str2 = 'leetcode', str3 = 'leetcod', str4 = 'limo', str5 = 'abcde';
             const alph1 = 'abcdefghijklmnopqrstuvwxyz', alph2 = 'labefghijkmnpqrstucvowxdyz';
 
             expect(newAlphabet(str1, alph1)).to.be.true;
             expect(newAlphabet(str2, alph1)).to.be.false;
             expect(newAlphabet(str3, alph2)).to.be.true;
             expect(newAlphabet(str4, alph2)).to.be.true;
-            expect(newAlphabet(str5, alph2)).to.be.false
+            expect(newAlphabet(str5, alph2)).to.be.false;
         })
     })
 
@@ -42,7 +42,7 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
             expect(longestPalindrome("abccccdd")).to.equal(7);
             expect(longestPalindrome('aabccerrz')).to.equal(7);
             expect(longestPalindrome('abcde')).to.equal(0);
-            expect(longestPalindrome('abcdee')).to.equal(2);
+            expect(longestPalindrome('abcdee')).to.equal(3);
         })
     })
 
