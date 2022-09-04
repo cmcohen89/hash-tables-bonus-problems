@@ -86,12 +86,13 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
 
     describe('climbingSteps()', () => {
         it('should return the number of distinct ways to climb the given number of steps', () => {
-            expect(climbingSteps(0)).to.equal(1)
-            expect(climbingSteps(1)).to.equal(1)
-            expect(climbingSteps(2)).to.equal(2)
-            expect(climbingSteps(3)).to.equal(4)
-            expect(climbingSteps(4)).to.equal(7)
-            expect(climbingSteps(5)).to.equal(13)
+            expect(climbingSteps(0)).to.equal(1);
+            expect(climbingSteps(1)).to.equal(1);
+            expect(climbingSteps(2)).to.equal(2);
+            expect(climbingSteps(3)).to.equal(4);
+            expect(climbingSteps(4)).to.equal(7);
+            expect(climbingSteps(5)).to.equal(13);
+            expect(climbingSteps(6)).to.equal(24);
         })
     })
 // })
