@@ -22,6 +22,16 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
                 expect(kth(str2, 1)).to.equal('a');
             })
         })
+
+        it('should run in O(n) time', () => {
+            const arr1 = new Array(500000).fill('a');
+            const arr2 = new Array(300000).fill('b');
+            const arr3 = new Array(200000).fill('c');
+
+            expect (kth(arr1.concat(arr2, arr3).join(''), 1)).to.equal('a');
+            expect (kth(arr1.concat(arr2, arr3).join(''), 2)).to.equal('b');
+            expect (kth(arr1.concat(arr2, arr3).join(''), 3)).to.equal('c');
+        })
     })
 
     describe('newAlphabet()', () => {
@@ -35,22 +45,47 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
             expect(newAlphabet(str4, alph2)).to.be.true;
             expect(newAlphabet(str5, alph2)).to.be.false;
         })
+
+        it('should run in O(n) time', () => {
+            const arr1 = new Array(500000).fill('a');
+            const arr2 = new Array(300000).fill('b');
+            const arr3 = new Array(200000).fill('c');
+            const alph1 = 'abcdefghijklmnopqrstuvwxyz'
+
+            expect(newAlphabet(arr1.concat(arr2, arr3).join(''), alph1)).to.be.true;
+            expect(newAlphabet(arr1.concat(arr3, arr2).join(''), alph1)).to.be.false;
+        })
     })
 
     describe('longestPalindrome()', () => {
         it('should determine the length of the longest palindrome that can be built with an inputted string', () => {
             expect(longestPalindrome("abccccdd")).to.equal(7);
             expect(longestPalindrome('aabccerrz')).to.equal(7);
-            expect(longestPalindrome('abcde')).to.equal(0);
+            expect(longestPalindrome('abcde')).to.equal(1);
             expect(longestPalindrome('abcdee')).to.equal(3);
+        })
+
+        it('should run in O(n) time', () => {
+            const arr1 = new Array(1).fill('a');
+            const arr2 = new Array(1).fill('b');
+            const arr3 = new Array(800000).fill('c');
+            const arr4 = new Array(400000).fill('d');
+
+            expect(longestPalindrome(arr1.concat(arr2, arr3, arr4).join(''))).to.equal(1200001)
         })
     })
 
     describe('longestSubstr()', () => {
         it('should find the length of the longest substring without repeating characters', () => {
+            expect(longestSubstr('abc')).to.equal(3)
             expect(longestSubstr("abcabcbb")).to.equal(3)
             expect(longestSubstr('bbbbb')).to.equal(1)
             expect(longestSubstr('abcdeffghij')).to.equal(6);
+        })
+
+        it('should run in O(n) time', () => {
+            const arr1 = new Array(1000000).fill('a');
+            expect(longestSubstr(arr1.join('') + 'b' + 'c')).to.equal(3)
         })
     })
 
@@ -59,6 +94,12 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
             expect(maxSubarr([1,3,2,2,5,2,3,7])).to.equal(5);
             expect(maxSubarr([1,1,1,1,3])).to.equal(4);
             expect(maxSubarr([1,2,3,4,5])).to.equal(2);
+        })
+
+        it('should run in O(n) time', () => {
+            const arr1 = new Array(1000000).fill(1);
+
+            expect(maxSubarr(arr1.concat(3))).to.equal(1000000)
         })
     })
 
@@ -77,10 +118,17 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
 
         it('should return -1 if the given amount cannot be made up by any combination of coins', () => {
             const coins2 = [5];
-            const coins3 = [4, 7, 9];
+            const coins3 = [6, 7, 9];
 
             expect(coinChange(coins2, 3)).to.equal(-1);
-            expect(coinChange(coins3, 14)).to.equal(-1);
+            expect(coinChange(coins3, 11)).to.equal(-1);
+        })
+
+        it('should run in O(n) time', () => {
+            const coins = [1, 5, 10, 25];
+
+            expect(coinChange(coins, 1000000)).to.equal(40000)
+            expect(coinChange([29], 1000000)).to.equal(-1)
         })
     })
 
@@ -93,6 +141,10 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
             expect(climbingSteps(4)).to.equal(7);
             expect(climbingSteps(5)).to.equal(13);
             expect(climbingSteps(6)).to.equal(24);
+        })
+
+        it('should run in O(n) time', () => {
+            expect(climbingSteps(50)).to.equal(10562230626642)
         })
     })
 // })
