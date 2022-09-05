@@ -41,7 +41,7 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
         it('should determine the length of the longest palindrome that can be built with an inputted string', () => {
             expect(longestPalindrome("abccccdd")).to.equal(7);
             expect(longestPalindrome('aabccerrz')).to.equal(7);
-            expect(longestPalindrome('abcde')).to.equal(0);
+            expect(longestPalindrome('abcde')).to.equal(1);
             expect(longestPalindrome('abcdee')).to.equal(3);
         })
     })
