@@ -1,7 +1,6 @@
 const { expect } = require('chai');
 const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChange, climbingSteps } = require('../phases/03-bonus-problems');
 
-// describe('Phase 3 - Bonus hash table practice problems', () => {
     describe('kth()', () => {
         it('should return the kth most frequent character in the string', () => {
             const str1 = 'aaabbc', str2 = 'assessment'
@@ -147,4 +146,3 @@ const { kth, newAlphabet, longestPalindrome, longestSubstr, maxSubarr, coinChang
             expect(climbingSteps(50)).to.equal(10562230626642)
         })
     })
-// })
